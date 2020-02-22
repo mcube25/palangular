@@ -8,6 +8,7 @@ import {Component, OnInit} from '@angular/core'
 export class ServerComponent implements OnInit{
 
 allowNewServer = false;
+serverName = 'hello';
 serverCreationStatus ='no server was created';
     constructor(){
         setTimeout(()=>{
@@ -16,9 +17,11 @@ serverCreationStatus ='no server was created';
     }
 ngOnInit(){}
 onCreateServer(){
-    
-}
-serverID =10;
+    this.serverCreationStatus='server was created !!'+ this.serverName};
+    onUpdateServerName(event: any){
+    this.serverName = (<HTMLInputElement>event.target).value;
+    }
+    serverID =10;
 serverStatus: string ='offline';
 comeOnLine: string ='click below'
 
